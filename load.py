@@ -5,7 +5,7 @@ from PIL import Image
 import numpy as np
 
 # Load model using torch.hub
-model = torch.hub.load('otroshi/edgeface', 'edgeface_xs_q', 
+model = torch.hub.load('otroshi/edgeface', 'edgeface_base', 
                       source='github', pretrained=True)
 model.eval()
 
@@ -44,8 +44,8 @@ def calculate_similarity(embedding1, embedding2, method='cosine'):
         return similarity
     
 # Example usage
-image1_path = 'assets\jahi.jpg'
-image2_path = 'assets\emon.jpg'
+image1_path = 'assets/tom2.jpg'
+image2_path = 'assets/tom.jpg'
 
 # Extract embeddings
 embedding1 = get_embedding(image1_path, model, transform)
